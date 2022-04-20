@@ -934,6 +934,23 @@ public class RelatedObjectsHelper {
   }
 
   /**
+   * Given an ontology, a set of axioms, and a pattern to match annotations to, return a set of
+   * axioms that are annotated with the matching annotation.
+   *
+   * @param ontology OWLOntology to get annotations from
+   * @param ioHelper IOHelper to use for prefixes
+   * @param annotationPattern annotation to filter OWLObjects on
+   * @return subset of OWLAxioms matching the annotation pattern
+   * @throws Exception on issue getting literal annotations
+   */
+  public static Set<OWLAxiom> selectAxiomsByPattern(
+    OWLOntology ontology, IOHelper ioHelper, String annotationPattern)
+    throws Exception {
+    Set<OWLAnnotation> annotations = getAnnotations(ontology, ioHelper, annotationPattern);
+    return selectAnnotatedAxioms(ontology.getAxioms(), annotations);
+  }
+
+  /**
    * Given a set of objects, return a set of all OWLProperties from the starting set.
    *
    * @param objects Set of OWLObjects to filter OWLProperties of
@@ -1882,6 +1899,22 @@ public class RelatedObjectsHelper {
       axiomTypes.add(OWLAxiom.class);
     }
     return axiomTypes;
+  }
+
+  /**
+   * Given an ontology, a set of objects, and a set of annotations, return a set of objects that are
+   * annotated with at least one of the annotations in the set.
+   *
+   * @param axioms axioms to filter
+   * @param annotations Set of OWLAnnotations to filter objects with
+   * @return subset of objects annotated by one of the OWLAnnotations
+   */
+  private static Set<OWLAxiom> selectAnnotatedAxioms(
+    final Set<OWLAxiom> axioms, Set<OWLAnnotation> annotations) {
+    return axioms.stream()
+      .filter(OWLAxiom::isAnnotated)
+      .filter(axiom -> axiom.getAnnotations().stream().anyMatch(annotations::contains))
+      .collect(Collectors.toSet());
   }
 
   /**
