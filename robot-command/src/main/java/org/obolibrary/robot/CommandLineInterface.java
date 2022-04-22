@@ -20,6 +20,7 @@ public class CommandLineInterface {
   private static CommandManager initManager() {
     CommandManager m = new CommandManager();
     m.addCommand("annotate", new AnnotateCommand());
+    m.addCommand("axioms", new AxiomsCommand());
     m.addCommand("collapse", new CollapseCommand());
     m.addCommand("convert", new ConvertCommand());
     m.addCommand("diff", new DiffCommand());
@@ -38,7 +39,6 @@ public class CommandLineInterface {
     m.addCommand("reduce", new ReduceCommand());
     m.addCommand("relax", new RelaxCommand());
     m.addCommand("remove", new RemoveCommand());
-    m.addCommand("remove-axioms", new RemoveAxiomsCommand());
     m.addCommand("rename", new RenameCommand());
     m.addCommand("repair", new RepairCommand());
     m.addCommand("report", new ReportCommand());
