@@ -111,6 +111,9 @@ public class AxiomsCommand implements Command {
     final Set<OWLAxiom> axioms = select == null ?
       ontology.getAxioms() : RelatedObjectsHelper.selectAxiomsByPattern(ontology, ioHelper, select);
 
+    final Set<OWLAxiom> axiomsWithoutAnnotations = axioms.stream().map( a -> a.getAxiomWithoutAnnotations() ).collect(Collectors.toSet());
+    axioms.addAll(axiomsWithoutAnnotations);
+
     if (operation.equals("remove")) {
       manager.removeAxioms(ontology, axioms);
     } else if (operation.equals("annotate")) {
