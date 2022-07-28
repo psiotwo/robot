@@ -38,4 +38,13 @@ public class RepairOperationTest extends CoreTest {
     RepairOperation.repair(ontology, iohelper, true, Collections.singleton(hasDbXref));
     assertIdentical("/xref-repaired.obo", ontology);
   }
+
+  @Test
+  public void test1020RepairDoesNotCreateInvalidRdf() throws IOException {
+    final String folder = "/1020-repair-wrong-output";
+    OWLOntology input = loadOntology(folder + "/input.owl");
+    IOHelper iohelper = new IOHelper();
+    RepairOperation.repair(input, iohelper, true, Collections.emptySet());
+    assertIdentical(folder + "/output.owl", input);
+  }
 }
