@@ -24,6 +24,12 @@ public class ReportQueriesTest extends CoreTest {
             new String[] {
               "http://test.org/test#B", "http://test.org/test#C", "http://test.org/test#D"
             }
+          },{
+            "annotation_whitespace",
+            "/annotation_whitespace.owl",
+            new String[] {
+              "http://test.org/test#A", "http://test.org/test#B"
+            }
           }
         });
   }
