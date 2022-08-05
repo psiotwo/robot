@@ -12,15 +12,9 @@ DELETE {
 } INSERT {
   ?entity ?property ?newValue
 } WHERE {
-  {?property a owl:AnnotationProperty .
-   ?entity ?property ?value .
-   FILTER REGEX(str(?value), "[\\s\r\n]+$")
-   FILTER (!isBlank(?entity))}
-  UNION
-  {?property a owl:AnnotationProperty .
-   ?entity ?property ?value .
-   FILTER REGEX(str(?value), "^[\\s\r\n]+")
-   FILTER (!isBlank(?entity))
-  }
+  ?property a owl:AnnotationProperty .
+  ?entity ?property ?value .
+  FILTER ( !isBlank(?entity) )
+  FILTER ( REGEX(str(?value), "[\\s\r\n]+$") || REGEX(str(?value), "^[\\s\r\n]+") )
   BIND( REPLACE(REPLACE(?value,"^[\\s\r\n]+",""),"[\\s\r\n]+$","") AS ?newValue )
 }

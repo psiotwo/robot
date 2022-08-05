@@ -33,9 +33,9 @@ public class CoreTest {
    * @return the loaded ontology
    * @throws IOException on file problems
    */
-  public OWLOntology loadOntology(String path) throws IOException {
+  public static OWLOntology loadOntology(String path) throws IOException {
     IOHelper ioh = new IOHelper();
-    return ioh.loadOntology(this.getClass().getResourceAsStream(path));
+    return ioh.loadOntology(CoreTest.class.getResourceAsStream(path));
   }
 
   /**
