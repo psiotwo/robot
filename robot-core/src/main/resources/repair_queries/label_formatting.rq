@@ -1,0 +1,20 @@
+# # Label Formatting
+#
+# **Problem:** Formatting characters are used in a label. This may cause issues when trying to reference the entity by label.
+#
+# **Solution:** Remove formatting characters from label.
+
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+DELETE {
+  ?entity ?property ?value .
+} INSERT {
+  ?entity ?property ?newValue .
+} WHERE {
+  VALUES ?property { rdfs:label }
+  ?entity ?property ?value .
+  BIND (REPLACE(?value,"[\\n\\t]+"," ") AS ?newValue )
+  FILTER ( regex(?value, "[\\n\\t]+") )
+  FILTER ( !isBlank(?entity) )
+}

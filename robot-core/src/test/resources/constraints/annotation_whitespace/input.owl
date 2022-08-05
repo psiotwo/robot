@@ -2,22 +2,24 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
 
     <owl:Ontology rdf:about="http://test.org/test"/>
 
-    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
 
     <owl:Class rdf:about="http://test.org/test#A">
-      <rdfs:label> A</rdfs:label>
+      <dc:description> A</dc:description>
     </owl:Class>
 
     <owl:Class rdf:about="http://test.org/test#B">
-      <rdfs:label>B   </rdfs:label>
+      <dc:description>B   </dc:description>
+      <dc:description xml:lang="en">BB   </dc:description>
     </owl:Class>
 
     <owl:Class rdf:about="http://test.org/test#C">
-      <rdfs:label>C C</rdfs:label>
+      <dc:description>C C</dc:description>
     </owl:Class>
 
 </rdf:RDF>
