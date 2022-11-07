@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="https://test.org/ontology-github-988-disjointclasses-before"/>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://test.org/ontology-github-988-disjointclasses-before/A1"/>
+            <rdf:Description rdf:about="https://test.org/ontology-github-988-disjointclasses-before/A2"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://test.org/ontology-github-988-disjointclasses-before/A1"/>
+            <rdf:Description rdf:about="https://test.org/ontology-github-988-disjointclasses-before/A2"/>
+        </owl:members>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </rdf:Description>
+    <owl:Class rdf:about="https://test.org/ontology-github-988-disjointclasses-before/A3">
+        <owl:disjointWith rdf:resource="https://test.org/ontology-github-988-disjointclasses-before/A4"/>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="https://test.org/ontology-github-988-disjointclasses-before/A3"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#disjointWith"/>
+        <owl:annotatedTarget rdf:resource="https://test.org/ontology-github-988-disjointclasses-before/A4"/>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+    </owl:Axiom>
+</rdf:RDF>
