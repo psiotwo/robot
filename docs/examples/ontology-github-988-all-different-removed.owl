@@ -5,6 +5,8 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace">
     <owl:Ontology rdf:about="http://test.org/test"/>
 
+    <owl:AnnotationProperty rdf:about="http://test.org/p"/>
+
     <owl:NamedIndividual rdf:about="http://test.org/a"/>
 
     <owl:NamedIndividual rdf:about="http://test.org/b"/>

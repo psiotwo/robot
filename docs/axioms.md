@@ -41,7 +41,7 @@ Remove all DisjointWith axioms which are deprecated:
 Remove all AllDifferent axioms which are deprecated:
 
     robot axioms --input ontology-github-988-all-different.owl \
-      --select "owl:deprecated='true'^^xsd:boolean" \
+      --select "http://test.org/p='true'^^xsd:boolean" \
       --operation remove \
       --output results/ontology-github-988-all-different-removed.owl
 
