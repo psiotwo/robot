@@ -29,25 +29,25 @@ Remove all axioms which are deprecated, see [#988](https://github.com/ontodev/ro
     robot axioms --input ontology-github-988.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
-      --output results/ontology-github-988.owl
+      --output results/ontology-github-988-removed.owl
 
 Remove all DisjointWith axioms which are deprecated:
 
     robot axioms --input ontology-github-988-disjointclasses.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
-      --output results/ontology-github-988-disjointclasses.owl
+      --output results/ontology-github-988-disjointclasses-removed.owl
 
 Remove all AllDifferent axioms which are deprecated:
 
     robot axioms --input ontology-github-988-all-different.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
-      --output results/ontology-github-988-all-different.owl
+      --output results/ontology-github-988-all-different-removed.owl
 
 Mark all axioms in an ontology as deprecated:
 
-    robot axioms --input ontology-github-988.owl \
+    robot axioms --input ontology-github-988-without-annotation.owl \
       --operation annotate \
       --annotation "owl:deprecated='true'^^xsd:boolean" \
       --output results/ontology-github-988.owl
