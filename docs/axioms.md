@@ -26,28 +26,28 @@ The `--select` option lets you specify an annotation selector to pick axioms the
 
 Remove all axioms which are deprecated, see [#988](https://github.com/ontodev/robot/issues/988):
 
-    robot axioms --input ontology-github-988-before.owl \
+    robot axioms --input ontology-github-988.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
       --output results/ontology-github-988.owl
 
 Remove all DisjointWith axioms which are deprecated:
 
-    robot axioms --input ontology-github-988-disjointclasses-before.owl \
+    robot axioms --input ontology-github-988-disjointclasses.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
       --output results/ontology-github-988-disjointclasses.owl
 
 Remove all AllDifferent axioms which are deprecated:
 
-    robot axioms --input ontology-github-988-all-different-before.owl \
+    robot axioms --input ontology-github-988-all-different.owl \
       --select "owl:deprecated='true'^^xsd:boolean" \
       --operation remove \
       --output results/ontology-github-988-all-different.owl
 
 Mark all axioms in an ontology as deprecated:
 
-    robot axioms --input ontology-github-988-before.owl \
+    robot axioms --input ontology-github-988.owl \
       --operation annotate \
       --annotation "owl:deprecated='true'^^xsd:boolean" \
       --output results/ontology-github-988.owl
