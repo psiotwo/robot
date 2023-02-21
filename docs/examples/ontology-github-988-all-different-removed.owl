@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<rdf:RDF
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <owl:Ontology rdf:about="http://test.org/test"/>
+
+    <owl:NamedIndividual rdf:about="http://test.org/a"/>
+
+    <owl:NamedIndividual rdf:about="http://test.org/b"/>
+
+    <owl:NamedIndividual rdf:about="http://test.org/c"/>
+
+</rdf:RDF>
